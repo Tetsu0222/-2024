@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common'; //ngForなどに必要2
+import { CommonModule } from '@angular/common'; //ngForなどに必要1
+import { RouterModule, Routes } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-todo-list',
@@ -15,6 +17,7 @@ export class TodoListComponent implements OnInit{
   todos2 = [ {key : '1' , name:'test1'} , {key : '2' , name:'test2'} , {key : '3' , name:'test3'} ];
   objKey : string = '';
   keyNumber : number = 1;
+  private router: Router;
 
   cunstructor(){
     //オブジェクトのキーが一意になるように現在時刻を取得
@@ -41,9 +44,13 @@ export class TodoListComponent implements OnInit{
     this.todos2 = this.todos2.filter( obj => obj.key !== deletekey);
   }
 
-  clearText(){
+  clearText():void{
     const testtest = document.getElementById("input1") as HTMLInputElement //HTMLInputElementで型を明確に指定しないとJSみたいに使用できない。
     testtest.value ='';
+  }
+
+  toDetail():void{
+    this.router.navigate(["/id"]);
   }
 
 }
