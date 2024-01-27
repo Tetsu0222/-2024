@@ -2,10 +2,8 @@
 
 <ul *ngFor ="let todo of todos2">
     <li>{{todo.name}}
-        <button (click)="toDetail()">詳細</button>
+        <button (click)="toDetail(todo.key)">詳細</button>
         <button (click)="deleteTodo2(todo.key)">削除</button>
-
-        <a routerLink="/id" routerLinkActive="active">Crisis Center</a>
     </li>
 </ul>
 

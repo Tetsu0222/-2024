@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './todo-detail.component.html',
   styleUrl: './todo-detail.component.css'
 })
+
 export class TodoDetailComponent {
 
 }

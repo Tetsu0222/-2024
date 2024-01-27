@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; //ngForなどに必要1
-import { RouterModule, Routes } from '@angular/router';
-import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-todo-list',
@@ -14,10 +12,9 @@ import { Router } from "@angular/router";
 export class TodoListComponent implements OnInit{
 
   title : string = 'Todo一覧';
-  todos2 = [ {key : '1' , name:'test1'} , {key : '2' , name:'test2'} , {key : '3' , name:'test3'} ];
+  todos2 = [ {key : 'id' , name:'test1'} , {key : '2' , name:'test2'} , {key : '3' , name:'test3'} ];
   objKey : string = '';
   keyNumber : number = 1;
-  private router: Router;
 
   cunstructor(){
     //オブジェクトのキーが一意になるように現在時刻を取得
@@ -49,8 +46,8 @@ export class TodoListComponent implements OnInit{
     testtest.value ='';
   }
 
-  toDetail():void{
-    this.router.navigate(["/id"]);
+  toDetail(detail:string):void{
+    window.location.href = detail;
   }
 
 }
