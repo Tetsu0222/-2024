@@ -1,13 +1,13 @@
 <p>{{title}}</p>
 
-<ul *ngFor ="let todo of todos2">
-    <li>{{todo.name}}
-        <button (click)="toDetail(todo.key)">詳細</button>
-        <button (click)="deleteTodo2(todo.key)">削除</button>
-    </li>
-</ul>
+<body>
+    <ul *ngFor ="let todo of todos2">
+        <li>{{todo.name}}
+            <button (click)="toDetail(todo.key)">詳細</button>
+            <button (click)="deleteTodo2(todo.key)">削除</button>
+        </li>
+    </ul>
 
-<input id="input1" type="text" #todo>
-<button (click)="addTodo(todo.value)">追加</button>
-
-
+    <input id="input1" type="text" #todo>
+    <button (click)="addTodo(todo.value)">追加</button>
+</body>

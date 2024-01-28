@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.List;
+
 public class DivisionMethod {
 	
 	//ユーグリッドの互除法 初期案
@@ -74,5 +76,36 @@ public class DivisionMethod {
 		String bigNumber = x > y ? String.valueOf(x) : String.valueOf(y);
 		System.out.println("最大公約数は" + bigNumber + "です。");
 	}
-
+	
+	//戻り値を返すタイプ
+	public int exec2( int x , int y ) {
+		
+		//両方が同じ数値の場合は、処理終了
+		if( x == y ) {
+			return 1 ;
+		}
+		
+		if( x == 1 || y == 1) {
+			return 1;
+		}
+		
+		//メインロジック
+		while( x >= 1 && y >= 1 ) {
+			if( x > y ){
+				x = x % y;
+			}else{
+				y = y % x;
+			}
+		}
+		
+		int bigNumber = x > y ? x : y;
+		
+		return bigNumber;
+	}
+	
+	//複数の数の最大公約数
+	public void exec( List<Integer> numberList ){
+		int result = numberList.stream().reduce(0,(x,y) -> this.exec2(x, y) );
+		System.out.println( result );
+	}
 }
