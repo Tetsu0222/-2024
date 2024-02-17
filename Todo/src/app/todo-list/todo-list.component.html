@@ -3,6 +3,7 @@
 <body>
     <ul *ngFor ="let todo of todos2">
         <li>{{todo.name}}
+            <!-- <div id={{todo.key}} (mouseenter)="toDetail2(todo.key)"></div> -->
             <button (click)="toDetail(todo.key)">詳細</button>
             <button (click)="deleteTodo2(todo.key)">削除</button>
         </li>
@@ -10,4 +11,6 @@
 
     <input id="input1" type="text" #todo>
     <button (click)="addTodo(todo.value)">追加</button>
+
+    <!-- <div id="test" (mouseenter)="toDetail3()">テスト</div> -->
 </body>

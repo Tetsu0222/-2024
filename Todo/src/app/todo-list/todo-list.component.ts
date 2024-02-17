@@ -50,4 +50,17 @@ export class TodoListComponent implements OnInit{
     window.location.href = detail;
   }
 
+  // toDetail2(detailkey:string):void{
+  //   const elem = document.getElementById(detailkey) as HTMLInputElement
+  //   elem.style.backgroundColor = "orange";
+  //   setTimeout( () => {
+  //     elem.style.backgroundColor = "";
+  //   }, 500);
+  // }
+
+  // toDetail3():void{
+  //   const elem = document.getElementById("test") as HTMLInputElement
+  //   elem.style.backgroundColor = "orange";
+  // }
+
 }
